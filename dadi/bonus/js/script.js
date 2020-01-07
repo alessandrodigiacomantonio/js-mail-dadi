@@ -1,4 +1,4 @@
-alert('Benvenuti a "Chi ce l\'ha più grosso", un gioco pensato per creare disagio');
+alert('Benvenuti ad "A chi è uscito più grosso", un gioco pensato per creare disagio');
 var numeroPlayers = parseInt(prompt('In quanti volete giocare?'));
 var nomiPlayers = [];
 var dadiPlayers = [];
@@ -20,9 +20,9 @@ for (var i = 0; i < numeroPlayers; i++) {
 console.log(nomiPlayers);
 console.log(dadiPlayers);
 console.log(pareggioPlayers);
+var pareggioPlayersCiclo = pareggioPlayers;
 while (pareggioPlayers.length!=1) {
   comparatore = 0;
-  var pareggioPlayersCiclo = pareggioPlayers;
   for (i = 0; i < pareggioPlayers.length; i++) {
     dado = Math.ceil(Math.random()*6);
     dadiPlayers[pareggioPlayersCiclo[i]] = dado;
