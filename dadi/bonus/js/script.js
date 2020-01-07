@@ -13,9 +13,10 @@ for (var i = 0; i < numeroPlayers; i++) {
   if (comparatore < dadiPlayers[i]) {
     comparatore = dadiPlayers[i];
     pareggioPlayers = [i];
-  }
-  if (comparatore == dadiPlayers[i]) {
+  } else if (comparatore == dadiPlayers[i]) {
     pareggioPlayers.push(i);
   }
 }
-for (i = 0; )
+console.log(nomiPlayers);
+console.log(dadiPlayers);
+console.log(pareggioPlayers);
