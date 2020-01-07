@@ -25,17 +25,17 @@ while (pareggioPlayers.length!=1) {
   comparatore = 0;
   for (i = 0; i < pareggioPlayers.length; i++) {
     dado = Math.ceil(Math.random()*6);
-    dadiPlayers[pareggioPlayersCiclo[i]] = dado;
-    console.log('rilancio dado del ' + ++i + ' giocatore che ha pareggiato: ' + dadiPlayers[pareggioPlayersCiclo[--i]] );
-    if (comparatore < dadiPlayers[pareggioPlayersCiclo[i]]) {
-      comparatore = dadiPlayers[pareggioPlayersCiclo[i]];
-      pareggioPlayers = pareggioPlayersCiclo[i];
-    } else if (comparatore == dadiPlayers[pareggioPlayersCiclo[i]]) {
-      pareggioPlayers.push(pareggioPlayersCiclo[i]);
+    dadiPlayers[pareggioPlayers[i]] = dado;
+    console.log('rilancio dado del ' + ++i + ' giocatore che ha pareggiato: ' + dadiPlayers[pareggioPlayers[--i]] );
+    if (comparatore < dadiPlayers[pareggioPlayers[i]]) {
+      comparatore = dadiPlayers[pareggioPlayers[i]];
+      pareggioPlayersCiclo = pareggioPlayers[i];
+    } else if (comparatore == dadiPlayers[pareggioPlayers[i]]) {
+      pareggioPlayersCiclo.push(pareggioPlayers[i]);
     }
     console.log('al termine del ' + ++i + ' spareggio, c\'è/ci sono ' + pareggioPlayers.length + ' giocatori\n\n');
     i--;
-    console.log(dadiPlayers);
+    console.log(pareggioPlayers);
   }
 }
 console.log('A ' + nomiPlayers[pareggioPlayers[0]] + ' è uscito più grosso !');
