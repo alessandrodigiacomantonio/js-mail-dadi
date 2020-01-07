@@ -20,22 +20,21 @@ for (var i = 0; i < numeroPlayers; i++) {
 console.log(nomiPlayers);
 console.log(dadiPlayers);
 console.log(pareggioPlayers);
-var pareggioPlayersCiclo = pareggioPlayers;
-while (pareggioPlayers.length!=1) {
+var contenitore = pareggioPlayers;
+while (pareggioPlayers.length != 1) {
   comparatore = 0;
+  pareggioPlayers = contenitore;
+  console.log(pareggioPlayers);
   for (i = 0; i < pareggioPlayers.length; i++) {
-    dado = Math.ceil(Math.random()*6);
-    dadiPlayers[pareggioPlayers[i]] = dado;
-    console.log('rilancio dado del ' + ++i + ' giocatore che ha pareggiato: ' + dadiPlayers[pareggioPlayers[--i]] );
-    if (comparatore < dadiPlayers[pareggioPlayers[i]]) {
-      comparatore = dadiPlayers[pareggioPlayers[i]];
-      pareggioPlayersCiclo = pareggioPlayers[i];
-    } else if (comparatore == dadiPlayers[pareggioPlayers[i]]) {
-      pareggioPlayersCiclo.push(pareggioPlayers[i]);
-    }
-    console.log('al termine del ' + ++i + ' spareggio, c\'è/ci sono ' + pareggioPlayers.length + ' giocatori\n\n');
-    i--;
-    console.log(pareggioPlayers);
+  dado = Math.ceil(Math.random()*6);
+  dadiPlayers[pareggioPlayers[i]] = dado;
+  if (comparatore < dadiPlayers[pareggioPlayers[i]]) {
+    comparatore = dado;
+    contenitore = [];
+    contenitore[0] = dadiPlayers[pareggioPlayers[i]];
+  } else if (comparatore == dadiPlayers[pareggioPlayers[i]]) {
+    contenitore.push(dadiPlayers[pareggioPlayers[i]]);
+  }
   }
 }
 console.log('A ' + nomiPlayers[pareggioPlayers[0]] + ' è uscito più grosso !');
