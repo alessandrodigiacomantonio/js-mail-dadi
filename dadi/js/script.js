@@ -15,4 +15,3 @@
 } else {
   alert(nomiPlayers[0] +': ' + dadiPlayers[0] + '\n' + nomiPlayers[1] +': ' + dadiPlayers[1] + '\n\n' + 'Vi è uscito ugualmente grosso');
 }
-console.log(dadiPlayers);
