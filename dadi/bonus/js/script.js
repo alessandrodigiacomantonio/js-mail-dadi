@@ -23,18 +23,20 @@ console.log(pareggioPlayers);
 var contenitore = pareggioPlayers;
 while (pareggioPlayers.length != 1) {
   comparatore = 0;
-  pareggioPlayers = contenitore;
   console.log(pareggioPlayers);
   for (i = 0; i < pareggioPlayers.length; i++) {
   dado = Math.ceil(Math.random()*6);
   dadiPlayers[pareggioPlayers[i]] = dado;
+  console.log('nuovo valore ' + dadiPlayers[pareggioPlayers[i]] + ' di ' + pareggioPlayers[i]);
   if (comparatore < dadiPlayers[pareggioPlayers[i]]) {
     comparatore = dado;
     contenitore = [];
-    contenitore[0] = dadiPlayers[pareggioPlayers[i]];
+    contenitore[0] = [pareggioPlayers[i]];
   } else if (comparatore == dadiPlayers[pareggioPlayers[i]]) {
-    contenitore.push(dadiPlayers[pareggioPlayers[i]]);
+    contenitore.push([pareggioPlayers[i]]);
+    }
   }
-  }
+  pareggioPlayers = contenitore;
+  console.log(pareggioPlayers);
 }
 console.log('A ' + nomiPlayers[pareggioPlayers[0]] + ' è uscito più grosso !');
